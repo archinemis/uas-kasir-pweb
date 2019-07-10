@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Master | Barang</title>
+
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/fontawesome/css/all.min.css">
+  </head>
+  <body>
+    <!-- kode untuk sidebar (awal) -->
+    <div class="sidebar">
+      <div class="logo text-center">
+        <h2>Kasir<b style="color:#ffc107">Ku</b></h2>
+      </div>
+      <ul class="list-unstyled">
+        <li class="side-link">
+          <a href="../../index.html" class="dashboard-link">
+            <i class="fas fa-home" style="margin-right: 8px;"></i>
+            Dashboard
+          </a>
+        </li>
+          <li class="side-link">
+            <i
+              class="fas fa-user-shield icon-judul"
+              style="margin-right: 11px;"
+            ></i
+            >Master
+          </li>
+          <li class="side-link">
+            <a
+              href="../master/barang-main.html"
+              style="margin-left:-1px"
+              class="link-style"
+              >Barang</a
+            >
+          </li>
+          <li class="side-link">
+            <a
+              href="../master/supplier-main.html"
+              style="margin-left:-1px"
+              class="link-style"
+              >Karyawan</a
+            >
+          </li>
+          <li class="side-link">
+            <a href="../master/supplier-main.html" class="link-style">Supplier</a>
+          </li>
+        <li class="side-link">
+          <i class="fas fa-shopping-cart icon-judul"></i><b>Transaksi</b>
+        </li>
+        <li class="side-link"><a href="../transaksi/transaksi-penjualan.html" class="link-style">Penjualan</a></li>
+        <li class="side-link"><a href="../transaksi/transaksi-pembelian.html" class="link-style">Pembelian</a></li>
+        <div class="selected-link">
+            <li class="side-link">
+                <i class="fas fa-flag icon-judul"></i><b>Laporan</b>
+            </li>
+            <li class="side-link"><a href="#" class="link-style"><b>Stok</b></a></li>
+            <li class="side-link"><a href="laporan-pembelian.html" class="link-style">Pembelian</a></li>
+            <li class="side-link"><a href="laporan-penjualan.html" class="link-style">Penjualan</a></li>
+        </div>
+      </ul>
+    </div>
+    <!-- kode untuk sidebar (akhir) -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto"></div>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Selamat datang Denandra</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid kontent">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="judul">Laporan Stok</h2>
+          <h6 class="breadcumb-sub">Laporan / <a href="">Stok</a></h6>
+        </div>
+        <div class="col-md-7">
+          <button type="button" class="btn btn-outline-primary" onclick="print()">
+              <i class="fas fa-print"></i>&nbsp;&nbsp; Print Laporan
+          </button>
+        </div>
+        <div class="col-md-5">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-search"></i></div>
+            </div>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Tulis untuk mencari laporan"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1%;">
+        <div class="col-md-12">
+          <table class="table table-hover shadow-sm">
+            <thead class="">
+              <tr class="bg-dark" style="color: #fff">
+                <th scope="col" width="50">#</th>
+                <th scope="col" width="100">Kode</th>
+                <th scope="col" width="300">Nama Barang</th>
+                <th scope="col">Stok Barang</th>
+                <th scope="col">Harga</th>
+                <th scope="col" width="250">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody style="color:rgb(102, 102, 102);">
+              <tr>
+                <th scope="row">1</th>
+                <td>B-001</td>
+                <td>Meja</td>
+                <td>100</td>
+                <td>Rp 25.000</td>
+                <td><b class="text-warning">Stok Cukup</b> </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>B-002</td>
+                <td>Kipas Angin</td>
+                <td>100</td>
+                <td>Rp 150.000</td>
+                <td><b class="text-success">Stok Banyak</b></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>B-003</td>
+                <td>Batu Akik</td>
+                <td>100</td>
+                <td>Rp 375.000</td>
+                <td><b class="text-success">Stok Banyak</b></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>B-004</td>
+                <td>Speaker Logitech z100</td>
+                <td>100</td>
+                <td>Rp 120.000</td>
+                <td><b class="text-danger">Stok Sedikit</b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h5 class="judul">Hasil : 4/4</h4>
+        </div>
+        <div class="col-md-4">
+          <nav aria-label="Page navigation example" style="float:right">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script>
+      function tombol() {
+        alert("Hapus?");
+      }
+    </script>
+  </body>
+</html>
