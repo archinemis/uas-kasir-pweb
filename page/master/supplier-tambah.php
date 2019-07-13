@@ -135,7 +135,7 @@
           if ($a[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-pembelian.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
@@ -234,17 +234,10 @@
                   <label for="">Kode Supplier</label>
                   <input
                     type="text"
-                    name="asd"
+                    name="kd_supp"
                     class="form-control"
                     placeholder="Kode Supplier"
-                    value="<?php echo kode_sup() ?>"
-                    disabled
                   />
-                  <input 
-                    type="hidden"
-                    name="kd_supp"
-                    value="<?php echo kode_sup() ?>"
-                  >
                 </div>
                 <div class="form-group col-md-4">
                   <label for="">Nama Supplier</label>

@@ -22,8 +22,14 @@
     }
     $pendidikan   = $_POST['pendidikan'];
     $jabatan      = $_POST['jabatan'];
+    $M1           = $_POST['M1'];
+    $M2           = $_POST['M2'];
+    $M3           = $_POST['M3'];
+    $T1           = $_POST['T1'];
+    $T2           = $_POST['T2'];
+    $L1           = $_POST['L1'];
 
-    updateKaryawan($nik,$nama_kar,$alamat_kar,$nomor_telp,$tgl_lahir,$jk,$pendidikan,$jabatan);
+    updateKaryawan($nik,$nama_kar,$alamat_kar,$nomor_telp,$tgl_lahir,$jk,$pendidikan,$jabatan,$M1,$M2,$M3,$T1,$T2,$L1);
   }
 
   include '../../controller/Login.php';
@@ -34,7 +40,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Master | Tambah Karyawan</title>
+    <title>Master | Update Karyawan</title>
 
     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../css/style.css" />
@@ -122,7 +128,7 @@
           if ($a[3]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-penjualan.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-penjualan.php" class="dashboard-link">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -226,29 +232,25 @@
     <div class="container-fluid kontent">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="judul">Ubah Karyawan</h2>
+          <h2 class="judul">Update Karyawan</h2>
           <h6 class="breadcumb-sub">
-            Master / <a href="karyawan-main.html">Karyawan</a> /
-            <a href="">Ubah Karyawan</a>
+            Master / <a href="karyawan-main.php">Karyawan</a> /
+            <a href="">Update Karyawan</a>
           </h6>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-8">
           <div class="card isi-tambah" style="padding-top:30px; padding-bottom:30px">
-          <form action="" method="POST">
+            <form action="" method="POST">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="">NIK</label>
                   <input
                     type="text"
-                    name="aaa"
+                    name="nik"
                     class="form-control"
                     placeholder="Masukkan NIK"
                     value="<?php echo $nik ?>"
-                    disabled
                   />
-                  <input type="hidden"
-                    name="nik"
-                    value="<?php echo $nik ?>">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="">Nama Karyawan</label>
@@ -288,6 +290,7 @@
                     type="date"
                     name="tgl_lahir"
                     class="form-control"
+                    placeholder="Nama Barang"
                     value="<?php echo $data[4] ?>"
                 />
                 </div>
@@ -327,6 +330,7 @@
                 <div class="form-group col-md-5">
                   <label for="">Pendidikan</label>
                   <select class="form-control" name="pendidikan" required>
+                    <option selected disabled>Pilih Pendidikan</option>
                     <!-- <option selected disabled>Pilih Pendidikan</option> -->
                     <?php
                       $kat = array("SD", "SMP", "SMA/SMK", "S1", "S2", "S3");
@@ -365,12 +369,125 @@
                   </select>
                 </div>
               </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card isi-tambah" style="padding-top:30px; padding-bottom:30px">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="">Username</label>
+                  <input
+                    type="text"
+                    name="uname"
+                    class="form-control"
+                    placeholder="Username"
+                    value="<?php echo $data[8]; ?>"
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="">Password</label>
+                  <input
+                    type="password"
+                    name="pass"
+                    class="form-control"
+                    placeholder="Password"
+                    value="<?php echo $data[9] ?>"
+                  />
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[10]) {
+                        echo '<input class="form-check-input" name="M1" type="checkbox" id="M1" value="'.$data[10].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="M1" type="checkbox" id="M1">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="M1">
+                      M1
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[11]) {
+                        echo '<input class="form-check-input" name="M2" type="checkbox" id="M2" value="'.$data[11].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="M2" type="checkbox" id="M2">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="M2">
+                      M2
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[12]) {
+                        echo '<input class="form-check-input" name="M3" type="checkbox" id="M3" value="'.$data[12].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="M3" type="checkbox" id="M3">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="M3">
+                      M3
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[13]) {
+                        echo '<input class="form-check-input" name="T1" type="checkbox" id="T1" value="'.$data[13].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="T1" type="checkbox" id="T1">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="T1">
+                      T1
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[14]) {
+                        echo '<input class="form-check-input" name="T2" type="checkbox" id="T2" value="'.$data[14].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="T2" type="checkbox" id="T2">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="T2">
+                      T2
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="form-check">
+                    <?php
+                      if ($data[15]) {
+                        echo '<input class="form-check-input" name="L1" type="checkbox" id="L1" value="'.$data[15].'" checked>';
+                      }else{
+                        echo '<input class="form-check-input" name="L1" type="checkbox" id="L1">';
+                      }
+                    ?>
+                    <label class="form-check-label" for="L1">
+                      L1
+                    </label>
+                  </div>
+                </div>
+              </div>
               <button
                 type="submit"
                 class="btn btn-primary"
-                style="width: 20%; height: 40px; margin-top: 20px;"
+                style="width: 60%; height: 40px; margin-top: 20px;"
               >
-                <i class="fas fa-edit"></i> Tambah Karyawan
+                <i class="fas fa-plus"></i> Update Karyawan
               </button>
             </form>
           </div>

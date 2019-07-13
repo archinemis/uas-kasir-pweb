@@ -189,7 +189,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto"></div>
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#">Selamat datang Denandra</a>
+          <a class="nav-item nav-link" href="#">Selamat datang <b><?php echo $_SESSION['nama_kar']; ?></b></a>
         </div>
       </div>
     </nav>

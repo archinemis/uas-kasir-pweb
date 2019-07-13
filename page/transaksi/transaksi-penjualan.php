@@ -523,8 +523,6 @@
                                 </div>
                             </div>
                             <div class="col-sm-5"></div>
-                            
-
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="kode">Bayar</label>

@@ -141,12 +141,20 @@
             $data[5] = $row['jk'];
             $data[6] = $row['pendidikan'];
             $data[7] = $row['jabatan'];
+            $data[8] = $row['username'];
+            $data[9] = $row['password'];
+            $data[10] = $row['m1'];
+            $data[11] = $row['m2'];
+            $data[12] = $row['m3'];
+            $data[13] = $row['t1'];
+            $data[14] = $row['t2'];
+            $data[15] = $row['l1'];
         }
 
         return $data;
     }
 
-    function updateKaryawan($nik,$nama_kar,$alamat_kar,$nomor_telp,$tgl_lahir,$jk,$pendidikan,$jabatan){
+    function updateKaryawan($nik,$nama_kar,$alamat_kar,$nomor_telp,$tgl_lahir,$jk,$pendidikan,$jabatan,$M1,$M2,$M3,$T1,$T2,$L1){
         include '../../config/koneksi.php';
 
         $update = "UPDATE tb_karyawan SET
@@ -156,7 +164,13 @@
                     tgl_lahir = '$tgl_lahir',
                     jk = '$jk',
                     pendidikan = '$pendidikan',
-                    jabatan = '$jabatan'
+                    jabatan = '$jabatan',
+                    m1 = '$M1',
+                    m2 = '$M2',
+                    m3 = '$M3',
+                    t1 = '$T1',
+                    t2 = '$T2',
+                    l1 = '$L1'
                     WHERE nik = '$nik'";
 
         $query = mysqli_query($con,$update);

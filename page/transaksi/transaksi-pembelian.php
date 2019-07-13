@@ -67,38 +67,19 @@
         }
         function ubahppn() {
             var tot = document.getElementById('total').value;
-            var dis = document.getElementById('diskon').value;
             var ppn = document.getElementById('ppn').value;
 
-            if (dis == "") {
-                dis = 0;
-            }
             var hasil;
-            hasil = (Number(tot) * (1 - (Number(dis) / 100))) * (1 + (Number(ppn) / 100));
-            document.getElementById('grandtotal').value = Number(hasil);
-        }
-        function ubahdiskon() {
-            var tot = document.getElementById('total').value;
-            var dis = document.getElementById('diskon').value;
-            var ppn = document.getElementById('ppn').value;
-            if (ppn == "") {
-                ppn = 0;
-            }
-            var hasil;
-            hasil = (Number(tot) * (1 - (Number(dis) / 100))) * (1 + (Number(ppn) / 100));
+            hasil = Number(tot) * (1 + (Number(ppn) / 100));
             document.getElementById('grandtotal').value = Number(hasil);
         }
         function ubahbayar() {
             var tot = document.getElementById('total').value;
-            var dis = document.getElementById('diskon').value;
             var ppn = document.getElementById('ppn').value;
             var bayar = document.getElementById('bayar').value;
 
-            if (dis == "") {
-                dis = 0;
-            }
             var hasil;
-            hasil = (Number(tot) * (1 - (Number(dis) / 100))) * (1 + (Number(ppn) / 100));
+            hasil = Number(tot) * (1 + (Number(ppn) / 100));
             document.getElementById('grandtotal').value = hasil;
 
             var kembalinya;
@@ -130,15 +111,11 @@
                     total = total + datato[i];
                 }
                 document.getElementById("total").value = total;
-                if ((document.getElementById('diskon').value == "0") || (document.getElementById('diskon').value == "")) {
-                    document.getElementById('diskon').value == "0";
-                }
                 if ((document.getElementById('ppn').value == "0") || (document.getElementById('ppn').value == "")) {
                     document.getElementById('ppn').value == "0";
                 }
-                ubahdiskon();
                 ubahppn();
-                ubahbayar();
+                // ubahbayar();
 
                 document.getElementById("isi").innerHTML = "<table class=\"table table-hover\"><thead>" + "<tr><th>Action</th><th>Kode</th><th>Nama</th><th>Satuan</th><th>Jumlah</th><th>Harga Jual</th><th>Total</th></tr>"+"</thead></tbody>"+x+"</tbody></table>";
                 document.getElementById("ko").value = "";
@@ -368,34 +345,52 @@
                                 </div>
                             </div>
                             <div class="col-sm-3"></div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="kode">Nama</label>
+                                    <label for="kode">Nomor DO</label>
                                     <input type="text" class="form-control" id="namakonsumen" placeholder="Enter nama" name="nama"
                                         require>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="kode">Telp :</label>
-                                    <input type="text" class="form-control" id="telp" placeholder="Enter Telp" name="telp" required>
+                                    <label for="kode">Nama CP</label>
+                                    <input type="text" class="form-control" id="namakonsumen" placeholder="Enter nama" name="nama"
+                                        require>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="kode">Alamat:</label>
-                                    <input type="text" class="form-control" id="alamat" placeholder="Enter Alamat" name="alamat"
-                                        required>
+                                    <label for="kode">Supplier</label>
+                                    <input type="text" class="form-control" id="telp" placeholder="Enter Telp" name="telp" required>
                                 </div>
                             </div>
-                            <!-- <div class="col-sm-3"></div> -->
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="keterangan">Telpon</label>
+                                    <input type="text" class="form-control" id="keterangan" placeholder="Enter Telpon" name="keterangan" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="keterangan">Email</label>
+                                    <input type="text" class="form-control" id="keterangan" placeholder="Enter Email" name="keterangan" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="kode">Keterangan</label>
+                                    <input type="text" class="form-control" id="telp" placeholder="Enter Keterangan" name="telp" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3"></div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="keterangan">Keterangan</label>
+                                    <label for="keterangan">Telpon</label>
                                     <input type="text" class="form-control" id="keterangan" placeholder="Enter Keterangan" name="keterangan" required>
                                 </div>
                             </div>
-                            
                             <!-- <div class="col-sm-9"></div> -->
                           </div>
                         </div>
@@ -499,13 +494,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label for="kode">Diskon:</label>
-                                    <input type="number" class="form-control" id="diskon" placeholder="Enter Diskon" name="diskon"
-                                        onchange="ubahdiskon()" required>
-                                </div>
-                            </div>
+                            <div class="col-sm-2"></div>
                             <div class="col-sm-4"></div>
                             <div class="col-sm-4">
                                 <div class="form-group">
@@ -516,28 +505,14 @@
                             </div>
                             <!-- <div class="col-sm-8"></div> -->
                             
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label for="kode">Grand Total</label>
-                                    <input type="number" class="form-control" id="grandtotal" placeholder="Grand Total" name="grandtotal" readonly>
-                                </div>
-                            </div>
+                            <div class="col-sm-3"></div>
                             <div class="col-sm-5"></div>
                             
 
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="kode">Bayar</label>
-                                    <input type="number" class="form-control" id="bayar" placeholder="Enter Bayar" name="bayar"
-                                        onchange="ubahbayar()" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-8"></div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="kode">Kembali</label>
-                                    <input type="number" class="form-control" id="kembalian" placeholder="Kembalian"
-                                        name="kembalian" readonly>
+                                    <label for="kode">Grand Total</label>
+                                    <input type="number" class="form-control" id="grandtotal" placeholder="Grand Total" name="grandtotal" readonly>
                                 </div>
                             </div>
 
