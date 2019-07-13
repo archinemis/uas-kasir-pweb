@@ -6,7 +6,9 @@
         $select = "SELECT * FROM tb_karyawan WHERE username='$uname' AND password = '$passwd'";
         $query = mysqli_query($con, $select);
         if (mysqli_num_rows($query) > 0) {
+            $row = mysqli_fetch_array($query);
             $_SESSION['username'] = $uname;
+            $_SESSION['nama_kar'] = $row[1];
             header("location:../index.php");
         }else{
             echo "ERROR ".mysqli_error($con);

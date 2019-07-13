@@ -26,7 +26,7 @@
                     <th scope="row"><?php echo $no ?></th>
                     <td><?php echo $row['kode_barang'] ?></td>
                     <td width="230"><b><?php echo $row['nama_barang'] ?></b></td>
-                    <td><?php echo $row['qty'] ?></td>
+                    <td><?php echo $row['satuan'] ?></td>
                     <td><?php echo $row['kategori'] ?></td>
                     <td>Rp <?php echo number_format($row['harga_beli']) ?></td>
                     <td>Rp <?php echo number_format($row['harga_jual']) ?></td>
@@ -56,7 +56,7 @@
 
         $update = "UPDATE tb_barang SET 
                     nama_barang = '$nama', 
-                    qty = '$stok_barang', 
+                    satuan = '$stok_barang', 
                     kategori = '$kategori_brg', 
                     harga_beli = '$harga_beli', 
                     harga_jual = '$harga_jual'
@@ -121,7 +121,7 @@
         while($row = mysqli_fetch_array($query)){
             $hasil[0] = $row['kode_barang'];
             $hasil[1] = $row['nama_barang'];
-            $hasil[2] = $row['qty'];
+            $hasil[2] = $row['satuan'];
             $hasil[3] = $row['kategori'];
             $hasil[4] = $row['harga_beli'];
             $hasil[5] = $row['harga_jual'];

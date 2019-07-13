@@ -77,7 +77,7 @@
           if ($a[1]) {
             ?>
             <li class="side-link">
-              <a href="karyawan-main.php" class="dashboard-link" style="color:#fff;">
+              <a href="karyawan-main.php" class="dashboard-link">
               <i class="fas fa-id-card-alt" style="margin-right: 11px;"></i>
                 Karyawan
               </a>
@@ -96,7 +96,7 @@
           if ($a[2]) {
             ?>
             <li class="side-link">
-              <a href="supplier-main.php" class="dashboard-link">
+              <a href="supplier-main.php" class="dashboard-link" style="color:#fff;">
               <i class="fas fa-truck-loading" style="margin-right: 10px;"></i>
                 Supplier
               </a>
@@ -120,7 +120,7 @@
           if ($a[3]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-penjualan.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-penjualan.php" class="dashboard-link">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -139,7 +139,7 @@
           if ($a[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-pembelian.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>

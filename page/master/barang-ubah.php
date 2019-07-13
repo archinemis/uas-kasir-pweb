@@ -136,7 +136,7 @@
           if ($a[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-pembelian.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
@@ -235,14 +235,10 @@
                   <label for="">Kode Barang</label>
                   <input
                     type="text"
-                    name="asd"
+                    name="kd_barang"
                     class="form-control"
                     value="<?php echo $id ?>"
-                    disabled
                   />
-                  <input type="hidden"
-                    name="kd_barang"
-                    value="<?php echo $id ?>">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="">Nama Barang</label>
@@ -274,12 +270,12 @@
                   </select>
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="">Quantitas Barang</label>
+                  <label for="">Satuan Barang</label>
                   <input
                     type="text"
                     name="stok_barang"
                     class="form-control"
-                    placeholder="Quantitas Barang"
+                    placeholder="Satuan Barang"
                     value="<?php echo $data[2] ?>"
                     required
                   />
