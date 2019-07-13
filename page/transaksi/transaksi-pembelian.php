@@ -241,7 +241,7 @@
           if ($data[3]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-penjualan.php" class="dashboard-link" style="color:#fff;">
+              <a href="transaksi-penjualan.php" class="dashboard-link">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -260,7 +260,7 @@
           if ($data[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="transaksi-pembelian.php" class="dashboard-link" style="color:#fff;">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
@@ -346,7 +346,7 @@
       <div class="row">
         <div class="col-md-12">
           <h2 class="judul">Transaksi Penjualan</h2>
-          <h6 class="breadcumb-sub">Master / <a href="">Transaksi Penjualan</a></h6>
+          <h6 class="breadcumb-sub">Master / <a href="">Transaksi Pembelian</a></h6>
         </div>
         </div>
       <div class="row" style="margin-top:1%;">

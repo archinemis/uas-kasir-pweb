@@ -141,7 +141,7 @@
           if ($a[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="../transaksi/transaksi-pembelian.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
