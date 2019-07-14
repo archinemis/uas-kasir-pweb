@@ -314,7 +314,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto"></div>
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#">Selamat datang Denandra</a>
+          <a class="nav-item nav-link" href="#">Selamat datang  <b><?php echo $_SESSION['nama_kar']; ?></b></a>
         </div>
       </div>
     </nav>
@@ -322,7 +322,7 @@
     <div class="container-fluid kontent">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="judul">Transaksi Penjualan</h2>
+          <h2 class="judul">Transaksi Pembelian</h2>
           <h6 class="breadcumb-sub">Master / <a href="">Transaksi Pembelian</a></h6>
         </div>
         </div>
