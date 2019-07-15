@@ -218,7 +218,7 @@
           if ($data[3]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-penjualan.php" class="dashboard-link">
+              <a href="penjualan-tabel.php" class="dashboard-link">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -237,7 +237,7 @@
           if ($data[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link" style="color:#fff;">
+              <a href="pembelian-tabel.php" class="dashboard-link" style="color:#fff;">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
