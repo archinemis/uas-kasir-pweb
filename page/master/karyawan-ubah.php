@@ -128,7 +128,7 @@
           if ($a[3]) {
             ?>
             <li class="side-link">
-              <a href="../transaksi/transaksi-penjualan.php" class="dashboard-link">
+              <a href="../transaksi/penjualan-tabel.php" class="dashboard-link">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -147,7 +147,7 @@
           if ($a[4]) {
             ?>
             <li class="side-link">
-              <a href="../transaksi/transaksi-pembelian.php" class="dashboard-link">
+              <a href="../transaksi/pembelian-tabel.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
@@ -224,7 +224,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto"></div>
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#">Selamat datang Denandra</a>
+          <a class="nav-item nav-link" href="#">Selamat datang  <b><?php echo $_SESSION['nama_kar']; ?></b></a>
         </div>
       </div>
     </nav>
@@ -403,7 +403,7 @@
                       if ($data[10]) {
                         echo '<input class="form-check-input" name="M1" type="checkbox" id="M1" value="'.$data[10].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="M1" type="checkbox" id="M1">';
+                        echo '<input class="form-check-input" name="M1" type="checkbox" id="M1" value="'.$data[10].'">';
                       }
                     ?>
                     <label class="form-check-label" for="M1">
@@ -417,7 +417,7 @@
                       if ($data[11]) {
                         echo '<input class="form-check-input" name="M2" type="checkbox" id="M2" value="'.$data[11].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="M2" type="checkbox" id="M2">';
+                        echo '<input class="form-check-input" name="M2" type="checkbox" id="M2" value="'.$data[11].'">';
                       }
                     ?>
                     <label class="form-check-label" for="M2">
@@ -431,7 +431,7 @@
                       if ($data[12]) {
                         echo '<input class="form-check-input" name="M3" type="checkbox" id="M3" value="'.$data[12].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="M3" type="checkbox" id="M3">';
+                        echo '<input class="form-check-input" name="M3" type="checkbox" id="M3" value="'.$data[12].'">';
                       }
                     ?>
                     <label class="form-check-label" for="M3">
@@ -445,7 +445,7 @@
                       if ($data[13]) {
                         echo '<input class="form-check-input" name="T1" type="checkbox" id="T1" value="'.$data[13].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="T1" type="checkbox" id="T1">';
+                        echo '<input class="form-check-input" name="T1" type="checkbox" id="T1" value="'.$data[13].'">';
                       }
                     ?>
                     <label class="form-check-label" for="T1">
@@ -459,7 +459,7 @@
                       if ($data[14]) {
                         echo '<input class="form-check-input" name="T2" type="checkbox" id="T2" value="'.$data[14].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="T2" type="checkbox" id="T2">';
+                        echo '<input class="form-check-input" name="T2" type="checkbox" id="T2" value="'.$data[14].'">';
                       }
                     ?>
                     <label class="form-check-label" for="T2">
@@ -473,7 +473,7 @@
                       if ($data[15]) {
                         echo '<input class="form-check-input" name="L1" type="checkbox" id="L1" value="'.$data[15].'" checked>';
                       }else{
-                        echo '<input class="form-check-input" name="L1" type="checkbox" id="L1">';
+                        echo '<input class="form-check-input" name="L1" type="checkbox" id="L1" value="'.$data[15].'">';
                       }
                     ?>
                     <label class="form-check-label" for="L1">

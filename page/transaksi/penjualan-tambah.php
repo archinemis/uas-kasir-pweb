@@ -60,7 +60,7 @@
             var x="";
             var i;
             for (i = 0; i < datako.length; i++) {
-                x += "<tr><td><button type=\"Button\" class=\"btn btn-danger\" data-dismiss=\"modal\" onclick=\"deleteBarang(" + i + ")\">X</button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataha[i] + "</td><td>" + dataju[i] + "</td><td>" + datato[i] + "</td></tr>";
+                x += "<tr><td><button type=\"Button\" class=\"btn btn-danger\" data-dismiss=\"modal\" onclick=\"deleteBarang(" + i + ")\"><i class=\"fas fa-trash-alt\"></i></button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataha[i] + "</td><td>" + dataju[i] + "</td><td>" + datato[i] + "</td></tr>";
             }
 
             document.getElementById("isi").innerHTML = "<table class=\"table table-hover\"><thead>" + "<tr><th>Action</th><th>Kode</th><th>Nama</th><th>Satuan</th><th>Jumlah</th><th>Harga Jual</th><th>Total</th></tr>" + "</thead><tbody>" + x + "</tbody></table>";
@@ -126,7 +126,7 @@
                 var total;
                 total = 0;
                 for (i = 0; i < datako.length; i++) {
-                    x += "<tr><td><button type=\"button\" class=\" btn btn-danger\" data-dismis=\" modal\" onclick=\" deleteBarang(" + i + ")\">X</button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataju[i] + "</td><td>" + dataha[i] + "</td><td>" + datato[i] + "</td></tr>";
+                    x += "<tr><td><button type=\"button\" class=\" btn btn-danger\" data-dismis=\" modal\" onclick=\" deleteBarang(" + i + ")\"><i class=\"fas fa-trash-alt\"></i></button></td><td>" + datako[i] + "</td><td>" + datana[i] + "</td><td>" + datasa[i] + "</td><td>" + dataju[i] + "</td><td>" + dataha[i] + "</td><td>" + datato[i] + "</td></tr>";
                     total = total + datato[i];
                 }
                 document.getElementById("total").value = total;
@@ -241,7 +241,7 @@
           if ($data[3]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-penjualan.php" class="dashboard-link" style="color:#fff;">
+              <a href="penjualan-tabel.php" class="dashboard-link" style="color:#fff;">
               <i class="fas fa-hand-holding-usd" style="margin-right: 12px;"></i>
                 Penjualan
               </a>
@@ -260,7 +260,7 @@
           if ($data[4]) {
             ?>
             <li class="side-link">
-              <a href="transaksi-pembelian.php" class="dashboard-link">
+              <a href="pembelian-tabel.php" class="dashboard-link">
               <i class="fas fa-shopping-bag" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
@@ -337,7 +337,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto"></div>
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#">Selamat datang Denandra</a>
+          <a class="nav-item nav-link" href="#">Selamat datang  <b><?php echo $_SESSION['nama_kar']; ?></b></a>
         </div>
       </div>
     </nav>
