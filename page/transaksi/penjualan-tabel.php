@@ -29,6 +29,19 @@
     <link rel="stylesheet" href="../../css/fontawesome/css/all.min.css">
   </head>
   <body>
+    <?php
+      if (!empty($_SESSION['a'])) {
+        unset($_SESSION['a']);
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom:0rem">
+          <strong>Transaksi berhasil ditambah!</strong> Cek tabel dibawah untuk melihat transaksi.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <?php
+      }
+    ?>
     <!-- kode untuk sidebar (awal) -->
     <div class="sidebar">
       <div class="logo text-center">
@@ -48,7 +61,7 @@
           if ($data[0]) {
             ?>
             <li class="side-link">
-              <a href="barang-main.php" class="dashboard-link">
+              <a href="../master/barang-main.php" class="dashboard-link">
               <i class="fas fa-box" style="margin-right: 12px;"></i>
                 Barang
               </a>
@@ -67,7 +80,7 @@
           if ($data[1]) {
             ?>
             <li class="side-link">
-              <a href="karyawan-main.php" class="dashboard-link">
+              <a href="../master/karyawan-main.php" class="dashboard-link">
               <i class="fas fa-id-card-alt" style="margin-right: 11px;"></i>
                 Karyawan
               </a>
@@ -86,7 +99,7 @@
           if ($data[2]) {
             ?>
             <li class="side-link">
-              <a href="supplier-main.php" class="dashboard-link">
+              <a href="../master/supplier-main.php" class="dashboard-link">
               <i class="fas fa-truck-loading" style="margin-right: 10px;"></i>
                 Supplier
               </a>
@@ -153,19 +166,19 @@
           if ($data[5]) {
             ?>
             <li class="side-link">
-              <a href="laporan-stok.php" class="dashboard-link">
+              <a href="../laporan/laporan-stok.php" class="dashboard-link">
               <i class="fas fa-file-contract" style="margin-right: 17px;"></i>
                 Stok
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-pembelian.php" class="dashboard-link">
+              <a href="../laporan/laporan-pembelian.php" class="dashboard-link">
               <i class="fas fa-file-download" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-penjualan.php" class="dashboard-link">
+              <a href="../laporan/laporan-penjualan.php" class="dashboard-link">
               <i class="fas fa-file-upload" style="margin-right: 15px;"></i>
                 Penjualan
               </a>
@@ -217,14 +230,15 @@
           <h2 class="judul">Rekap Penjualan</h2>
           <h6 class="breadcumb-sub">Transaksi / <a href="">Rekap Penjualan</a></h6>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <a href="penjualan-tambah.php">
             <button type="button" class="btn btn-outline-primary">
               <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Transaksi
             </button>
           </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+          <button onclick="print('tbpenjualan')" class="btn btn-outline-info" style="width: 100%;"><i class="fas fa-print"></i> Print Laporan Penjualan</button>
           <!-- <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-search"></i></div>
@@ -239,7 +253,7 @@
       </div>
       <div class="row" style="margin-top:1%;">
         <div class="col-md-12">
-          <table class="table table-hover shadow-sm">
+          <table class="table table-hover shadow-sm" id="tbpenjualan">
             <thead>
               <tr class="bg-dark" style="color: #fff">
                 <th scope="col">Kode</th>
@@ -267,7 +281,7 @@
                         <td scope="col"><?php echo $data['ppn'] ?>%</td>
                         <td scope="col"><?php echo $data['diskon'] ?>%</td>
                         <td scope="col">Rp <?php echo number_format($data['grand_total']) ?></td>
-                        <td scope="col"><center>Opsi</center></td>
+                        <td scope="col"><center> <button class="btn btn-info"><i class="fas fa-print"></i></button> </center></td>
                     </tr>
                 <?php
                         }
@@ -297,11 +311,23 @@
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/popper.min.js"></script>
     <script>
-      function tombol() {
-        confirm("Press a button!");
-        if (r != true) {
-          
-        }
+      function print(elem)
+      {
+          var mywindow = window.open('', 'PRINT', 'height=700,width=700');
+
+          mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+          mywindow.document.write('</head><body >');
+          mywindow.document.write('<h1>' + document.title  + '</h1>');
+          mywindow.document.write(document.getElementById(elem).innerHTML);
+          mywindow.document.write('</body></html>');
+
+          mywindow.document.close(); // necessary for IE >= 10
+          mywindow.focus(); // necessary for IE >= 10*/
+
+          mywindow.print();
+          mywindow.close();
+
+          return true;
       }
     </script>
   </body>

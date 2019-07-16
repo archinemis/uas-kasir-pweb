@@ -201,19 +201,19 @@
           if ($a[5]) {
             ?>
             <li class="side-link">
-              <a href="laporan-stok.php" class="dashboard-link">
+              <a href="../laporan/laporan-stok.php" class="dashboard-link">
               <i class="fas fa-file-contract" style="margin-right: 17px;"></i>
                 Stok
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-pembelian.php" class="dashboard-link">
+              <a href="../laporan/laporan-pembelian.php" class="dashboard-link">
               <i class="fas fa-file-download" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-penjualan.php" class="dashboard-link">
+              <a href="../laporan/laporan-penjualan.php" class="dashboard-link">
               <i class="fas fa-file-upload" style="margin-right: 15px;"></i>
                 Penjualan
               </a>
