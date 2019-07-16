@@ -103,7 +103,7 @@
 
             var kembalinya;
             kembalinya = Number(bayar) - hasil;
-            document.getElementById('kembalian').value = kembalian;
+            document.getElementById('kembalian').value = kembalinya;
         }
         function addBarang() {
             var jum = datako.length;
@@ -284,19 +284,19 @@
           if ($data[5]) {
             ?>
             <li class="side-link">
-              <a href="laporan-stok.php" class="dashboard-link">
+              <a href="../laporan/laporan-stok.php" class="dashboard-link">
               <i class="fas fa-file-contract" style="margin-right: 17px;"></i>
                 Stok
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-pembelian.php" class="dashboard-link">
+              <a href="../laporan/laporan-pembelian.php" class="dashboard-link">
               <i class="fas fa-file-download" style="margin-right: 15px;"></i>
                 Pembelian
               </a>
             </li>
             <li class="side-link">
-              <a href="laporan-penjualan.php" class="dashboard-link">
+              <a href="../laporan/laporan-penjualan.php" class="dashboard-link">
               <i class="fas fa-file-upload" style="margin-right: 15px;"></i>
                 Penjualan
               </a>
@@ -351,7 +351,7 @@
         </div>
       <div class="row" style="margin-top:1%;">
         <div class="col-md-12">
-            <form action="../../controller/Transaksi_penjualan.php" method="post" target="_blank">
+            <form action="../../controller/Transaksi_penjualan.php" method="post">
                 <div class="row">
                     <div class="col-md-12">
                       <div class="card shadow-sm">
